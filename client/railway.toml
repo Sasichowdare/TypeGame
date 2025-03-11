@@ -1,6 +1,6 @@
 [build]
 builder = "DOCKERFILE"
-dockerfilepath="/TypeGame/client/Dockerfile.railway"
+dockerfilepath="/TypeGame/client/Dockerfile.client"
 
 # Environment variables (e.g., API URL for your server)
 [environments]
