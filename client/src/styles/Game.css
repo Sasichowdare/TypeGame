@@ -1,0 +1,148 @@
+/* Base styles for the game container */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    color: #ffffff; /* White text for contrast */
+  }
+  
+  /* Main game container */
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    text-align: center; /* Center text */
+  }
+  
+  /* Score and Timer Styles */
+  h1, h2, h4 {
+    margin: 10px;
+    font-size: 2.5rem; /* Large font size for score and timer */
+    transition: transform 0.5s ease; /* Smooth transition for animations */
+  }
+  
+  /* Current Letter Display */
+  .letter-display {
+    font-size: 5rem; /* Large font size for current letter */
+    font-weight: bold; /* Bold for emphasis */
+    color: #ffec3d; /* Bright yellow for the letter */
+    animation: pop 0.5s ease-in-out; /* Animation for popping effect */
+  }
+  
+  /* Game Over Message */
+  .game-over-message {
+    font-size: 2rem; /* Font size for game over message */
+    color: #ff4d4d; /* Red color for game over */
+    animation: fadeIn 0.5s; /* Fade-in effect for game over message */
+  }
+  
+  /* Button Styles */
+  .new-game-btn, .logout-btn, .save-score-btn {
+    background-color: #28a745; /* Green background for buttons */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 25px; /* Rounded corners */
+    padding: 15px 30px; /* Padding for buttons */
+    margin: 10px; /* Space between buttons */
+    font-size: 1.2rem; /* Font size for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+  }
+  
+  /* Button Hover Effects */
+  .new-game-btn:hover, .logout-btn:hover, .save-score-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly grow on hover */
+  }
+  
+  /* Animation for popping letter */
+  @keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Fade-in animation for game over */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 600px) {
+    h1, h2, h4 {
+      font-size: 1.8rem; /* Smaller font size for smaller screens */
+    }
+    .letter-display {
+      font-size: 3rem; /* Smaller letter size */
+    }
+    .new-game-btn, .logout-btn, .save-score-btn {
+      padding: 10px 20px; /* Smaller padding for buttons */
+      font-size: 1rem; /* Smaller font size for buttons */
+    }
+  }
+
+  /* Hard Mode Button */
+.hard-mode-btn {
+  background-color: #dc3545; /* Red background for hard mode */
+  color: white; /* White text color */
+  border: none; /* No border */
+  border-radius: 25px; /* Rounded corners */
+  padding: 15px 30px; /* Padding for buttons */
+  margin: 10px; /* Space between buttons */
+  font-size: 1.2rem; /* Font size for buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+/* Hard Mode Button Hover Effects */
+.hard-mode-btn:hover {
+  background-color: #c82333; /* Darker red on hover */
+  transform: scale(1.05); /* Slightly grow on hover */
+}
+
+/* Hard Mode Button Animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.hard-mode-btn:active {
+  animation: shake 0.3s ease-in-out;
+}
+
+.easy-mode-btn {
+  background-color: #dfc726; /* Red background for hard mode */
+  color: white; /* White text color */
+  border: none; /* No border */
+  border-radius: 25px; /* Rounded corners */
+  padding: 15px 30px; /* Padding for buttons */
+  margin: 10px; /* Space between buttons */
+  font-size: 1.2rem; /* Font size for buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+/* Hard Mode Button Hover Effects */
+.easy-mode-btn:hover {
+  background-color: #bca824; /* Darker red on hover */
+  transform: scale(1.05); /* Slightly grow on hover */
+}
+
+/* Hard Mode Button Animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.easy-mode-btn:active {
+  animation: shake 0.3s ease-in-out;
+}

@@ -1,0 +1,13 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilepath="/TypeGame/client/Dockerfile.railway"
+
+# Environment variables (e.g., API URL for your server)
+[environments]
+  [environments.production]
+  NODE_ENV = "production"
+  REACT_APP_API_URL = "https://server-production-9585.up.railway.app"  # Replace after server is deployed
+
+# Expose port 80 (matches Dockerfile.client)
+[http]
+port = 80

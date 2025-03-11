@@ -1,0 +1,61 @@
+# version: '3.8'
+
+# services:
+#   client:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile.client
+#     ports:
+#       - "3000:80"
+#     depends_on:
+#       - server
+
+#   server:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile.server
+#     ports:
+#       - "5000:5000"
+#     environment:
+#       - POSTGRES_USER=postgres
+#       - POSTGRES_PASSWORD=sasi
+#       - POSTGRES_DB=TypeGame
+#     depends_on:
+#       - db
+
+#   db:
+#     image: postgres:14-alpine
+#     restart: always
+#     environment:
+#       - POSTGRES_USER=postgres
+#       - POSTGRES_PASSWORD=sasi
+#       - POSTGRES_DB=TypeGame
+#     ports:
+#       - "5432:5432"
+#     volumes:
+#       - pgdata:/var/lib/postgresql/data
+
+# volumes:
+#   pgdata:
+
+
+version: '3.8'
+
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.client
+    ports:
+      - "3000:80"
+    environment:
+      - REACT_APP_API_URL=https://{{.services.server.domain}}  # Railway auto-injects server URL
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile.server
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=postgresql://{{.PGUSER}}:{{.PGPASSWORD}}@{{.PGHOST}}:{{.PGPORT}}/{{.PGDATABASE}}
