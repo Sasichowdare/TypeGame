@@ -39,7 +39,8 @@ const app = express();
 
 // CORS configuration
 app.use(cors({
-  origin: "https://client-production-7bca.up.railway.app",  // Allow only your frontend domain
+//   origin: "https://client-production-7bca.up.railway.app",  // Allow only your frontend domain no domain
+  origin : "https://typegame.xmretail.app",
   methods: "GET,POST,PUT,DELETE",  // Allow these HTTP methods
   credentials: true,  // Allow cookies if needed (this might be useful for auth)
 }));
