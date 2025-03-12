@@ -1,6 +1,6 @@
 [build]
 builder = "DOCKERFILE"
-dockerfilepath="/TypeGame/server/Dockerfile.railway"
+dockerfilepath="/TypeGame/server/Dockerfile"
 
 [deploy]
 healthcheckPath = "/ping"
