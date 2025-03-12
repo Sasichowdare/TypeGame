@@ -19,25 +19,23 @@
 
 
 # Use Node.js as the base image for the server
+# Use Node.js as the base image
 FROM node:18-alpine
 
-# Set working directory for the server
+# Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json for the server
-# COPY server/package.json server/package-lock.json ./
+# Copy package.json and package-lock.json
 COPY package.json package-lock.json ./
 
-# Install server dependencies
+# Install dependencies
 RUN npm install
 
 # Copy all backend files
-# COPY server/ ./
-# Copy all backend files (from the server directory)
 COPY . .
 
-# Expose the port your server runs on (e.g., 5000)
+# Expose the port
 EXPOSE 5000
 
-# Start the Node.js server
+# Start the server
 CMD ["node", "server.js"]
