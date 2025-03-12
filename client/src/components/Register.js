@@ -8,6 +8,7 @@ function Register() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const SERVER_URL = 'https://server-production-9585.up.railway.app';
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -15,7 +16,7 @@ function Register() {
     try {
       // Make the POST request to the backend API with Axios
       const response = await axios.post(
-        'https://server-production-9585.up.railway.app/api/auth/register',
+        `${SERVER_URL}/api/auth/register`,
         { username, password },
         { withCredentials: true }  // Include credentials (cookies, authorization) if needed
       );

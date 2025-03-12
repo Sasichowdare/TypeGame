@@ -11,6 +11,7 @@ function HardGame() {
   const [highestScore, setHighestScore] = useState(null);
   const [isEasyMode, setIsEasyMode] = useState(false);
   const [letterPosition, setLetterPosition] = useState({ top: '50%', left: '50%' });
+  const SERVER_URL = 'https://server-production-9585.up.railway.app';
 
   const currentLetterRef = useRef('');
 
@@ -60,7 +61,7 @@ function HardGame() {
   
     try {
       await axios.post(
-        'http://localhost:5000/api/score/save',
+        `${SERVER_URL}/api/score/save`,
         { score: newScore },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -82,7 +83,7 @@ function HardGame() {
     }
 
     try {
-      const response = await axios.get('http://localhost:5000/api/score/highscore', {
+      const response = await axios.get(`${SERVER_URL}/api/score/highscore`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

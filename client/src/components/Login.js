@@ -6,6 +6,7 @@ import '../styles/Login.css'; // Importing the CSS file for styling
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const SERVER_URL = 'https://server-production-9585.up.railway.app';
   
   const navigate = useNavigate();  // Initialize useNavigate for navigation
 
@@ -13,7 +14,7 @@ function Login() {
     e.preventDefault();
   
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await axios.post(`${SERVER_URL}/api/auth/login`, {
         username,
         password,
       });
