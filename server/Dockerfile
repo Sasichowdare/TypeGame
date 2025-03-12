@@ -31,7 +31,9 @@ COPY server/package.json server/package-lock.json ./
 RUN npm install
 
 # Copy all backend files
-COPY server/ ./
+# COPY server/ ./
+# Copy all backend files (from the server directory)
+COPY . .
 
 # Expose the port your server runs on (e.g., 5000)
 EXPOSE 5000
