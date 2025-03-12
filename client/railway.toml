@@ -11,3 +11,8 @@ dockerfilepath="/TypeGame/client/Dockerfile.railway"
 # Expose port 80 (matches Dockerfile.client)
 [http]
 port = 80
+
+[deploy]
+healthcheckPath = "/ping"
+restartPolicyMaxRetries =10 
+restartPolicyType = "ON_FAILURE"
