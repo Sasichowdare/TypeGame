@@ -12,7 +12,3 @@ dockerfilepath="/TypeGame/client/Dockerfile"
 [http]
 port = 80
 
-[deploy]
-healthcheckPath = "/ping"
-restartPolicyMaxRetries =10 
-restartPolicyType = "ON_FAILURE"
