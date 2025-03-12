@@ -5,7 +5,15 @@ const authRoutes = require('./routes/authRoutes');
 const scoreRoutes = require('./routes/scoreRoutes');
 
 const app = express();
-app.use(cors());
+// app.use(cors());
+
+
+app.use(cors({ 
+    origin: "https://client-production-7bca.up.railway.app", // Allow only your frontend
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true, // Allow cookies if needed
+}));
+
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
