@@ -2,7 +2,3 @@
 builder = "DOCKERFILE"
 dockerfilepath="/TypeGame/server/Dockerfile"
 
-[deploy]
-healthcheckPath = "/ping"
-restartPolicyMaxRetries =10 
-restartPolicyType = "ON_FAILURE"
