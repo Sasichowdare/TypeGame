@@ -13,16 +13,18 @@ function Register() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://server-production-9585.up.railway.app/api/auth/register', {
-        username,
-        password,
-      });
+      // Make the POST request to the backend API with Axios
+      const response = await axios.post(
+        'https://server-production-9585.up.railway.app/api/auth/register',
+        { username, password },
+        { withCredentials: true }  // Include credentials (cookies, authorization) if needed
+      );
 
       // Store the token in localStorage upon successful registration
       localStorage.setItem('token', response.data.token);
 
       // Redirect to the game or dashboard after successful registration
-      window.location.href = '/'; // or whatever route you need
+      window.location.href = '/'; // or any other route you need to navigate to
 
     } catch (error) {
       console.error('Registration failed:', error);
