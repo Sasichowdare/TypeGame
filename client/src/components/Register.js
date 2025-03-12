@@ -28,8 +28,14 @@ function Register() {
 
     } catch (error) {
       console.error('Registration failed:', error);
-      alert('Registration failed! Please try again.');
-    }
+      if (error.response) {
+        setError(error.response.data.message || 'Registration failed. Please try again.');
+      } else if (error.request) {
+        setError('No response from the server. Please check your connection.');
+      } else {
+        setError('An error occurred. Please try again.');
+      }
+    } 
   };
 
   const handleLoginRedirect = () => {
