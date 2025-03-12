@@ -21,3 +21,11 @@ app.use('/api/score', scoreRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
+
+
+// [deploy]
+// healthcheckPath = "/ping"
+// restartPolicyMaxRetries =10 
+// restartPolicyType = "ON_FAILURE"
